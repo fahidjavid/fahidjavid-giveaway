@@ -1,0 +1,16 @@
+{
+	"apiVersion": 2,
+	"name": "create-block/fahidjavid-giveaway",
+	"version": "0.1.0",
+	"title": "Fahidjavid Giveaway",
+	"category": "common",
+	"icon": "awards",
+	"description": "Giveaway and Reward Block.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "fahidjavid-giveaway",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
