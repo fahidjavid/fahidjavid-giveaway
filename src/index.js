@@ -27,6 +27,63 @@ import save from './save';
  */
 registerBlockType('create-block/fahidjavid-giveaway', {
 
+	attributes: {
+		title: {
+			type: 'string',
+			source: 'html',
+			selector: 'h2',
+		},
+		titleColor: {
+			type: 'string',
+			default: '#333',
+		},
+		description: {
+			type: 'string',
+			source: 'html',
+			selector: 'p',
+
+		},
+		descriptionColor: {
+			type: 'string',
+			default: '#333',
+		},
+		accounts: {
+			default: {
+				twitter: false,
+				tweet: false,
+				youtube: false,
+				facebook: false,
+			},
+			twitter: {
+				default: {
+					text: '',
+					account: '',
+				}
+			},
+			tweet: {
+				default: {
+					text: '',
+					message: '',
+					url: '',
+				}
+			},
+			youtube: {
+				default: {
+					text: '',
+					url: '',
+				}
+			},
+			facebook: {
+				default: {
+					text: '',
+					url: '',
+				}
+			}
+		}
+		// Immediate Reward: Download Link/Button
+		// Enter Giveaway: Store the user's email and actions
+	},
+
 	/**
 	 * @see ./edit.js
 	 */
