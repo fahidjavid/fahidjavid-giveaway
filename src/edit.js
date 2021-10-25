@@ -3,7 +3,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
-import { __ } from '@wordpress/i18n';
+import {__} from '@wordpress/i18n';
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -11,7 +11,8 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import {useBlockProps} from '@wordpress/block-editor';
+import {RichText} from "@wordpress/block-editor";
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -29,13 +30,23 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit() {
+export default function Edit({attributes, setAttributes}) {
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Fahidjavid Giveaway – hello from the editor!',
-				'fahidjavid-giveaway'
-			) }
-		</p>
+		<div {...useBlockProps()}>
+			<RichText
+				tagName='h2'
+				placeholder='Giveaway Title'
+				value={attributes.title}
+				onChange={(newTitle) => setAttributes({title: newTitle})}
+				style={{color: attributes.titleColor}}
+			/>
+			<RichText
+				tagName='p'
+				placeholder='Giveaway Description'
+				value={attributes.description}
+				onChange={(newDescription) => setAttributes({description: newDescription})}
+				style={{color: attributes.descriptionColor}}
+			/>
+		</div>
 	);
 }
