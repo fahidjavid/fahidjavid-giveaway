@@ -11,8 +11,7 @@ import {__} from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import {useBlockProps} from '@wordpress/block-editor';
-import {RichText} from "@wordpress/block-editor";
+import {InnerBlocks, useBlockProps} from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -26,16 +25,7 @@ import {RichText} from "@wordpress/block-editor";
 export default function save({attributes}) {
 	return (
 		<div {...useBlockProps.save()}>
-			<RichText.Content
-				tagName='h2'
-				value={attributes.title}
-				style={{color: attributes.titleColor}}
-			/>
-			<RichText.Content
-				tagName='p'
-				value={attributes.description}
-				style={{color: attributes.descriptionColor}}
-			/>
+			<InnerBlocks.Content/>
 		</div>
 	);
 }

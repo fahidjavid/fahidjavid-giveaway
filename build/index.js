@@ -34,8 +34,15 @@ __webpack_require__.r(__webpack_exports__);
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
 
+ // import {RichText} from "@wordpress/block-editor";
 
-
+const MY_TEMPLATE = [['core/image', {}], ['core/heading', {
+  placeholder: 'Giveaway Title'
+}], ['core/paragraph', {
+  placeholder: 'Giveaway Description'
+}], ['core/button', {
+  placeholder: 'Call to Action'
+}]];
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -57,26 +64,9 @@ function Edit({
   attributes,
   setAttributes
 }) {
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "h2",
-    placeholder: "Giveaway Title",
-    value: attributes.title,
-    onChange: newTitle => setAttributes({
-      title: newTitle
-    }),
-    style: {
-      color: attributes.titleColor
-    }
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
-    tagName: "p",
-    placeholder: "Giveaway Description",
-    value: attributes.description,
-    onChange: newDescription => setAttributes({
-      description: newDescription
-    }),
-    style: {
-      color: attributes.descriptionColor
-    }
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
+    template: MY_TEMPLATE,
+    templateLock: "insert"
   }));
 }
 
@@ -123,24 +113,6 @@ __webpack_require__.r(__webpack_exports__);
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)('create-block/fahidjavid-giveaway', {
   attributes: {
-    title: {
-      type: 'string',
-      source: 'html',
-      selector: 'h2'
-    },
-    titleColor: {
-      type: 'string',
-      default: '#333'
-    },
-    description: {
-      type: 'string',
-      source: 'html',
-      selector: 'p'
-    },
-    descriptionColor: {
-      type: 'string',
-      default: '#333'
-    },
     accounts: {
       default: {
         twitter: false,
@@ -223,7 +195,6 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 
-
 /**
  * The save function defines the way in which the different attributes should
  * be combined into the final markup, which is then serialized by the block
@@ -237,19 +208,7 @@ __webpack_require__.r(__webpack_exports__);
 function save({
   attributes
 }) {
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
-    tagName: "h2",
-    value: attributes.title,
-    style: {
-      color: attributes.titleColor
-    }
-  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText.Content, {
-    tagName: "p",
-    value: attributes.description,
-    style: {
-      color: attributes.descriptionColor
-    }
-  }));
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.Content, null));
 }
 
 /***/ }),

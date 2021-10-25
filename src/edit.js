@@ -11,8 +11,16 @@ import {__} from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import {useBlockProps} from '@wordpress/block-editor';
-import {RichText} from "@wordpress/block-editor";
+import {InnerBlocks, useBlockProps} from '@wordpress/block-editor';
+// import {RichText} from "@wordpress/block-editor";
+
+const MY_TEMPLATE = [
+	['core/image', {}],
+	['core/heading', {placeholder: 'Giveaway Title'}],
+	['core/paragraph', {placeholder: 'Giveaway Description'}],
+	['core/button', {placeholder: 'Call to Action'}]
+];
+
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -33,20 +41,7 @@ import './editor.scss';
 export default function Edit({attributes, setAttributes}) {
 	return (
 		<div {...useBlockProps()}>
-			<RichText
-				tagName='h2'
-				placeholder='Giveaway Title'
-				value={attributes.title}
-				onChange={(newTitle) => setAttributes({title: newTitle})}
-				style={{color: attributes.titleColor}}
-			/>
-			<RichText
-				tagName='p'
-				placeholder='Giveaway Description'
-				value={attributes.description}
-				onChange={(newDescription) => setAttributes({description: newDescription})}
-				style={{color: attributes.descriptionColor}}
-			/>
+			<InnerBlocks template={MY_TEMPLATE} templateLock='insert' />
 		</div>
 	);
 }
