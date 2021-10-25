@@ -18,6 +18,7 @@ const MY_TEMPLATE = [
 	['core/image', {}],
 	['core/heading', {placeholder: 'Giveaway Title'}],
 	['core/paragraph', {placeholder: 'Giveaway Description'}],
+	['create-block/fahidjavid-giveaway-social-row'],
 	['core/button', {placeholder: 'Call to Action'}]
 ];
 
@@ -41,7 +42,7 @@ import './editor.scss';
 export default function Edit({attributes, setAttributes}) {
 	return (
 		<div {...useBlockProps()}>
-			<InnerBlocks template={MY_TEMPLATE} templateLock='insert' />
+			<InnerBlocks template={MY_TEMPLATE} templateLock='insert'/>
 		</div>
 	);
 }

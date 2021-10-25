@@ -1,0 +1,14 @@
+{
+  "name": "create-block/fahidjavid-giveaway-social-row",
+  "title": "Social Row",
+  "category": "widgets",
+  "icon": "smiley",
+  "parents": [
+	"create-block/fahidjavid-giveaway"
+  ],
+  "description": "Add a social media row to the Giveaway Block",
+  "textDomain": "fahidjavid-giveaway",
+  "support": {
+	"html": false
+  }
+}
