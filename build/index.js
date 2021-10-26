@@ -33,7 +33,9 @@ const TEMPLATE = [['core/columns', {}, [['core/column', {
 }, [['core/image', {
   sizeSlug: 'thumbnail'
 }]]], ['core/column', {
-  templateLock: 'all'
+  templateLock: 'all',
+  width: '70%',
+  verticalAlignment: 'center'
 }, [['core/button', {}]]]]]];
 const settings = {
   icon: "smiley",
@@ -84,7 +86,7 @@ const MY_TEMPLATE = [['core/image', {}], ['core/heading', {
 function edit() {
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
     template: MY_TEMPLATE,
-    templateLock: "insert"
+    allowedBlocks: ["create-block/fahidjavid-giveaway-social-row"]
   }));
 }
 
@@ -218,7 +220,7 @@ module.exports = window["wp"]["i18n"];
   \******************************************/
 /***/ (function(module) {
 
-module.exports = JSON.parse('{"name":"create-block/fahidjavid-giveaway-social-row","title":"Social Row","category":"widgets","icon":"smiley","parents":["create-block/fahidjavid-giveaway"],"description":"Add a social media row to the Giveaway Block","textDomain":"fahidjavid-giveaway","support":{"html":false}}');
+module.exports = JSON.parse('{"name":"create-block/fahidjavid-giveaway-social-row","title":"Social Row","category":"widgets","icon":"smiley","parent":["create-block/fahidjavid-giveaway"],"description":"Add a social media row to the Giveaway Block","textDomain":"fahidjavid-giveaway","support":{"html":false}}');
 
 /***/ })
 

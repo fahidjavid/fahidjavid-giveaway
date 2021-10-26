@@ -1,4 +1,3 @@
-
 import {__} from '@wordpress/i18n';
 import {InnerBlocks, useBlockProps} from '@wordpress/block-editor';
 import './editor.scss';
@@ -14,7 +13,10 @@ const MY_TEMPLATE = [
 export default function edit() {
 	return (
 		<div {...useBlockProps()}>
-			<InnerBlocks template={MY_TEMPLATE} templateLock='insert'/>
+			<InnerBlocks
+				template={MY_TEMPLATE}
+				allowedBlocks={["create-block/fahidjavid-giveaway-social-row"]}
+			/>
 		</div>
 	);
 }

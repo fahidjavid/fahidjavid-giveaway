@@ -9,7 +9,7 @@ const TEMPLATE = [
 		['core/column', {templateLock: 'all', width: '30%', verticalAlignment: 'center'}, [
 			['core/image', {sizeSlug: 'thumbnail'}]
 		]],
-		['core/column', {templateLock: 'all'}, [
+		['core/column', {templateLock: 'all', width: '70%', verticalAlignment: 'center'}, [
 			['core/button', {}]
 		]],
 	]]

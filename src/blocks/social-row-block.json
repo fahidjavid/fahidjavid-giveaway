@@ -3,7 +3,7 @@
   "title": "Social Row",
   "category": "widgets",
   "icon": "smiley",
-  "parents": [
+  "parent": [
 	"create-block/fahidjavid-giveaway"
   ],
   "description": "Add a social media row to the Giveaway Block",
